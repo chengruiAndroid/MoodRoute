@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">心旅</string>
+    <string name="app_main_name">心情旅程</string>
+
+    <string name="transition_image">transition_image</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
