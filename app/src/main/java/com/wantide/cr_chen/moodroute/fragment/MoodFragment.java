@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.transition.Explode;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +33,6 @@ public class MoodFragment extends Fragment {
     @Bind(R.id.content_view) RelativeLayout contentView;
 
     private static final String TAG = "MoodFragment";
-    private MoodBean mCUrMood;
-    private MoodBean mNextMood;
 
     public static MoodFragment getNewInstance() {
         return new MoodFragment();
@@ -71,14 +68,12 @@ public class MoodFragment extends Fragment {
                     expandingFragment.close();
                 }
 
-                Log.d(TAG, "onPageScrolled() called with: " + "position = [" + position + "], positionOffset = [" + positionOffset + "], positionOffsetPixels = [" + positionOffsetPixels + "]");
-                contentView.setBackgroundColor(ColorChange.caculateColor(getResources().getColor(mCUrMood.getColor()), getResources().getColor(mNextMood.getColor()), positionOffset));
+                if (position <= 6)
+                    contentView.setBackgroundColor(ColorChange.caculateColor(getResources().getColor(generateTravelList().get(position).getColor()), getResources().getColor(generateTravelList().get(position + 1).getColor()), positionOffset));
             }
 
             @Override
             public void onPageSelected(int position) {
-                mCUrMood = generateTravelList().get(position);
-                mNextMood = generateTravelList().get(position + 1);
             }
 
             @Override
@@ -97,9 +92,6 @@ public class MoodFragment extends Fragment {
         moods.add(new MoodBean("满足", R.drawable.satisfy, R.color.card_satisfy));
         moods.add(new MoodBean("平静", R.drawable.calm, R.color.card_calm));
         moods.add(new MoodBean("忧伤", R.drawable.sad, R.color.card_sad));
-
-        mCUrMood = moods.get(0);
-        mNextMood = moods.get(1);//初始化下一mode
         return moods;
     }
 
