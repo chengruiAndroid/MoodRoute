@@ -9,10 +9,20 @@ import android.os.Parcelable;
 public class MoodBean implements Parcelable {
     private String name;
     private int image;
+    private int color;
 
-    public MoodBean(String name, int image) {
+    public MoodBean(String name, int image, int color) {
         this.name = name;
         this.image = image;
+        this.color = color;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
     }
 
     public String getName() {

@@ -14,4 +14,12 @@
     <color name="color_black">#e5000000</color>
     <color name="color_jinse">#FFD700</color>
     <color name="cardview_bg">#6b6b6b</color>
+    <color name="card_fidget">#b4791f5d</color>
+    <color name="card_afraid">#b4332060</color>
+    <color name="card_tense">#b4E05517</color>
+    <color name="card_depression">#b4DEDEDC</color>
+    <color name="card_happy">#b4FADA01</color>
+    <color name="card_satisfy">#b461BAA0</color>
+    <color name="card_calm">#b437B2D4</color>
+    <color name="card_sad">#b40426AD</color>
 </resources>
