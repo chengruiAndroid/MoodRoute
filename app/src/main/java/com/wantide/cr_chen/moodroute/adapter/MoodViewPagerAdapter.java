@@ -29,7 +29,7 @@ public class MoodViewPagerAdapter extends ExpandingViewPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         MoodBean mood = moods.get(position);
-        return MoodCardFragment.newInstance(mood);
+        return MoodCardFragment.newInstance(mood, position);
     }
 
     @Override

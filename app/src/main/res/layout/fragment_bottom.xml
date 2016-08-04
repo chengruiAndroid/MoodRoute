@@ -12,31 +12,34 @@
     tools:context=".fragments.FragmentBottom">
 
     <TextView
+        android:id="@+id/license"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="license: every one can use this code to do everything" />
+        android:textSize="12sp"
+        android:maxLines="3"/>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <TextView
+            android:id="@+id/title_num"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_weight="1"
-            android:text="NO. 7911847" />
+            android:textSize="12sp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
             android:src="@drawable/stars" />
-    </RelativeLayout>
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -44,17 +47,18 @@
         android:layout_marginTop="10dp">
 
         <ImageView
-            android:src="@drawable/icons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-
-        <ImageView
+            android:id="@+id/rount"
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:src="@drawable/dots" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="11sp"/>
     </RelativeLayout>
 
 </LinearLayout>

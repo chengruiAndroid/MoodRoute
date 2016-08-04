@@ -11,12 +11,15 @@ import com.wantide.cr_chen.moodroute.bean.MoodBean;
  */
 public class MoodCardFragment extends ExpandingFragment {
     private static final String ARG_MOOD = "ARG_MOOD";
+    private static final String ARG_POSITION = "ARG_POSITION";
     private MoodBean mood;
+    private int position;
 
-    public static MoodCardFragment newInstance(MoodBean mood){
+    public static MoodCardFragment newInstance(MoodBean mood, int position){
         MoodCardFragment fragment = new MoodCardFragment();
         Bundle args = new Bundle();
         args.putParcelable(ARG_MOOD, mood);
+        args.putInt(ARG_POSITION, position);
         fragment.setArguments(args);
         return fragment;
     }
@@ -28,6 +31,7 @@ public class MoodCardFragment extends ExpandingFragment {
         Bundle args = getArguments();
         if(args != null) {
             mood = args.getParcelable(ARG_MOOD);
+            position = args.getInt(ARG_POSITION);
         }
     }
 
@@ -38,7 +42,7 @@ public class MoodCardFragment extends ExpandingFragment {
 
     @Override
     public Fragment getFragmentBottom() {
-        return FragmentBottom.newInstance();
+        return FragmentBottom.newInstance(position);
     }
 
 }
